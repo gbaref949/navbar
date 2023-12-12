@@ -8,6 +8,9 @@ import Carts from './Pages/Carts';
 import Error from './Pages/Error';
 import Home from './Pages/Home';
 import Products from './Pages/Products';
+import NavBar from './Components/Navbar';
+
+import {links, socials} from './utils/consts';
 
 const router = createBrowserRouter([
   {path: '/', element: <Home/>},

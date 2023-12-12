@@ -23,8 +23,27 @@ const NavBar = () => {
         }
     })
 
+    const linksContainerRef = useRef(null)
+    const linksRef = useRef(null)
+
+    useEffect(() =>{
+        const linksHeight = linksRef.current.getBoundingClientRect().linksHeight
+        if(showLinks){
+            linksContainerRef.current.style.height = `${linksHeight}px`
+        }else{
+            linksContainerRef.current.style.height = '0px'
+        }
+    }, [showLinks])
+
   return (
-    <div>NavBar</div>
+    <nav className="navbar">
+        <div className="nav-center">
+            <img src={logo} alt="logo" className="logo" />
+            <button className="nav-toggle" onClick={()=>setshowLinks(!showLinks)}>
+                <FaBars/>
+            </button>
+        </div>
+    </nav>
   )
 }
 
